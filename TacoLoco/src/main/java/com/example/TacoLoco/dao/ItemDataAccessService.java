@@ -8,14 +8,14 @@ import com.example.TacoLoco.model.Item;
 
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("itemDao")
 public class ItemDataAccessService implements ItemDao {
     
     private static List<Item>  DB = new ArrayList<>();
     
     @Override
     public int insertItem(UUID id, Item item){
-        DB.add(new Item(id, item.getName(), item.getPrice()));
+        DB.add(new Item(id, item.getName(), item.getPrice(),item.getQuantity()));
         return 1;
     }
 }
