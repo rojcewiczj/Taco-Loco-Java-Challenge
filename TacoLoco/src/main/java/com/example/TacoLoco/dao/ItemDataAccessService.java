@@ -6,6 +6,9 @@ import java.util.UUID;
 
 import com.example.TacoLoco.model.Item;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class ItemDataAccessService implements ItemDao {
     
     private static List<Item>  DB = new ArrayList<>();
