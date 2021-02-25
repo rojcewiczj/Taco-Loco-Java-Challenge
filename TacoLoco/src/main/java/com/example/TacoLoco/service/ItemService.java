@@ -1,5 +1,7 @@
 package com.example.TacoLoco.service;
 
+import java.util.List;
+
 import com.example.TacoLoco.dao.ItemDao;
 import com.example.TacoLoco.model.Item;
 
@@ -18,5 +20,13 @@ public class ItemService {
     }
     public int addItem(Item item){
         return itemDao.insertItem(item);
+    }
+
+    public List<Item> shoppingCart(){
+        return itemDao.shoppingCart();
+    }
+
+    public String returnTotal(){
+        return itemDao.returnTotal();
     }
 }

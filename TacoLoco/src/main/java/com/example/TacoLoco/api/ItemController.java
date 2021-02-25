@@ -1,12 +1,18 @@
 package com.example.TacoLoco.api;
 
+import java.util.List;
+
 import com.example.TacoLoco.model.Item;
 import com.example.TacoLoco.service.ItemService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("api/v1/item")
 @RestController
 public class ItemController {
     
@@ -18,7 +24,15 @@ public class ItemController {
     }
     
     @PostMapping
-    public void addItem(Item item){
+    public void addItem(@RequestBody Item item){
         itemService.addItem((item));
     }
+
+    @GetMapping
+    public String getTotal(){
+        
+        return itemService.returnTotal();
+        
+    }
+    
 }
