@@ -8,7 +8,7 @@ public interface ItemDao {
 
     int insertItem(UUID id, Item item);
 
-    default int addItem(Item item){
+    default int insertItem(Item item){
         UUID id = UUID.randomUUID();
         return insertItem(id, item);
     }
