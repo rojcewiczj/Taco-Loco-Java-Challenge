@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.TacoLoco.dao.ItemDao;
 import com.example.TacoLoco.model.Item;
+import com.example.TacoLoco.model.ShoppingCart;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -26,7 +27,7 @@ public class ItemService {
         return itemDao.shoppingCart();
     }
 
-    public String returnTotal(){
+    public ShoppingCart returnTotal(){
         return itemDao.returnTotal();
     }
 }

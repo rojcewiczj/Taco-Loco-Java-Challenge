@@ -3,6 +3,7 @@ package com.example.TacoLoco.api;
 import java.util.List;
 
 import com.example.TacoLoco.model.Item;
+import com.example.TacoLoco.model.ShoppingCart;
 import com.example.TacoLoco.service.ItemService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class ItemController {
     }
 
     @GetMapping
-    public String getTotal(){
+    public ShoppingCart getTotal(){
         
         return itemService.returnTotal();
         

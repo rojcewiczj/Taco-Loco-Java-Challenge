@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.example.TacoLoco.model.Item;
+import com.example.TacoLoco.model.ShoppingCart;
 
 public interface ItemDao {
 
@@ -16,6 +17,6 @@ public interface ItemDao {
 
     List<Item> shoppingCart();
 
-    String returnTotal();
+    ShoppingCart returnTotal();
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.example.TacoLoco.model.Item;
+import com.example.TacoLoco.model.ShoppingCart;
 
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,7 @@ public class ItemDataAccessService implements ItemDao {
         return DB;
     }
 
-    public String returnTotal(){
+    public ShoppingCart returnTotal(){
         int totalQuantity = 0;
         double totalCost = 0.00;
 
@@ -36,8 +37,12 @@ public class ItemDataAccessService implements ItemDao {
             totalCost = totalCost * .8;
         }
         String result = String.format("%.2f", totalCost);
-        return result;
+        
+        ShoppingCart cart = new ShoppingCart(DB, result);
+
+        return cart;
+
     }
 
-    public 
+   
 }
