@@ -15,8 +15,6 @@ public interface ItemDao {
         return insertItem(id, item);
     }
 
-    List<Item> shoppingCart();
-
-    ShoppingCart returnTotal();
+    ShoppingCart returnCart();
 
 }

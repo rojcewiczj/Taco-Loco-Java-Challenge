@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("api/v1/item")
+@RequestMapping("api/item")
 @RestController
 public class ItemController {
     
@@ -27,13 +27,12 @@ public class ItemController {
     @PostMapping
     public void addItem(@RequestBody Item item){
         itemService.addItem((item));
+        
     }
 
     @GetMapping
-    public ShoppingCart getTotal(){
-        
-        return itemService.returnTotal();
-        
+    public ShoppingCart getCart(){
+        return itemService.returnCart();
     }
     
 }

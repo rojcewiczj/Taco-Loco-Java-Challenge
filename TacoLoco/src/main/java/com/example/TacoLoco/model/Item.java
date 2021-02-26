@@ -11,7 +11,7 @@ public class Item {
 
     private final String name;
 
-    private final double price;
+    public final double price;
 
     private final int quantity;
 
@@ -21,7 +21,7 @@ public class Item {
         this.price = price;
         this.quantity = quantity;
     }
-
+    
     public UUID getId(){
         return id;
     }
@@ -31,7 +31,7 @@ public class Item {
     }
     
     public double getPrice(){
-        return price;
+      return price;
     }
 
     public int getQuantity(){

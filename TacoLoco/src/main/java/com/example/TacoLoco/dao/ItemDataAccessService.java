@@ -14,19 +14,19 @@ import org.springframework.stereotype.Repository;
 public class ItemDataAccessService implements ItemDao {
     
     private static List<Item>  DB = new ArrayList<>();
+
     @Override
     public int insertItem(UUID id, Item item){
+        
         DB.add(new Item(id, item.getName(), item.getPrice(),item.getQuantity()));
         return 1;
     }
     
     @Override
-    public List<Item> shoppingCart(){
-        return DB;
-    }
+    public ShoppingCart returnCart(){
 
-    public ShoppingCart returnTotal(){
         int totalQuantity = 0;
+        
         double totalCost = 0.00;
 
         for(Item item : DB){
@@ -36,6 +36,7 @@ public class ItemDataAccessService implements ItemDao {
         if(totalQuantity >= 4){
             totalCost = totalCost * .8;
         }
+        
         String result = String.format("%.2f", totalCost);
         
         ShoppingCart cart = new ShoppingCart(DB, result);
@@ -44,5 +45,4 @@ public class ItemDataAccessService implements ItemDao {
 
     }
 
-   
 }

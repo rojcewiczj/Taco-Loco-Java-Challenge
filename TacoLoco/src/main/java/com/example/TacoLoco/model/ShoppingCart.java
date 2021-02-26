@@ -4,12 +4,12 @@ import java.util.List;
 
 public class ShoppingCart {
     
-    public final List<Item> AllItems;
+    public final List<Item> Cart;
 
-    public final String totalCost;
+    public final String Total;
 
-    public ShoppingCart(List<Item> AllItems, String totalCost){
-        this.AllItems = AllItems;
-        this.totalCost = totalCost;
+    public ShoppingCart(List<Item> Cart, String Total){
+        this.Cart = Cart;
+        this.Total = Total;
     }
 }

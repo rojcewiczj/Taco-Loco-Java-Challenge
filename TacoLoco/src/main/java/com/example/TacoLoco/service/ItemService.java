@@ -22,12 +22,8 @@ public class ItemService {
     public int addItem(Item item){
         return itemDao.insertItem(item);
     }
-
-    public List<Item> shoppingCart(){
-        return itemDao.shoppingCart();
-    }
-
-    public ShoppingCart returnTotal(){
-        return itemDao.returnTotal();
+    
+    public ShoppingCart returnCart(){
+        return itemDao.returnCart();
     }
 }
